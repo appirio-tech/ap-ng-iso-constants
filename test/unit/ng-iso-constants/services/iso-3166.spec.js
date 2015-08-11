@@ -6,7 +6,7 @@ describe('ISO3166 Service', function() {
   beforeEach(function (){
 
     // load the module.
-    module('apNgIsoConstants.services');
+    module('ngIsoConstants.services');
 
     // inject your service for testing.
     // The _underscores_ are a convenience thing

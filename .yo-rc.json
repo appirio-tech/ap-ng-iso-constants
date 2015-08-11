@@ -6,26 +6,25 @@
         "email": "parth.shah@appirio.com"
       },
       "libraryName": {
-        "original": "ap-ng-iso-constants",
-        "camelized": "apNgIsoConstants",
-        "dasherized": "ap-ng-iso-constants",
-        "slugified": "ap-ng-iso-constants",
+        "original": "ng-iso-constants",
+        "camelized": "ngIsoConstants",
+        "dasherized": "ng-iso-constants",
+        "slugified": "ng-iso-constants",
         "parts": [
-          "ap",
           "ng",
           "iso",
           "constants"
         ]
       },
-      "includeModuleDirectives": false,
-      "includeModuleFilters": true,
-      "includeModuleServices": true,
+      "includeModuleDirectives": true,
+      "includeModuleFilters": false,
+      "includeModuleServices": false,
       "includeAngularModuleResource": false,
       "includeAngularModuleCookies": false,
       "includeAngularModuleSanitize": false,
-      "librarySrcDirectory": "src/ap-ng-iso-constants",
-      "libraryUnitTestDirectory": "test/unit/ap-ng-iso-constants",
-      "libraryUnitE2eDirectory": "test/e2e/ap-ng-iso-constants"
+      "librarySrcDirectory": "src/ng-iso-constants",
+      "libraryUnitTestDirectory": "test/unit/ng-iso-constants",
+      "libraryUnitE2eDirectory": "test/e2e/ng-iso-constants"
     }
   }
 }

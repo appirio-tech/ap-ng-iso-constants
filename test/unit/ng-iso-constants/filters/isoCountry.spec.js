@@ -7,8 +7,8 @@ describe('ISO3166 filters', function() {
   beforeEach(function (){
 
     // load the module.
-    module('apNgIsoConstants.services');
-    module('apNgIsoConstants.filters');
+    module('ngIsoConstants.services');
+    module('ngIsoConstants.filters');
 
     // mockISO3166 = {
     //   getCountryObjFromAlpha2: function(code) {
