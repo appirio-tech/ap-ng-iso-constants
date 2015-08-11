@@ -1,0 +1,31 @@
+{
+  "generator-angularjs-library": {
+    "props": {
+      "author": {
+        "name": "Parth Shah",
+        "email": "parth.shah@appirio.com"
+      },
+      "libraryName": {
+        "original": "ap-ng-iso-constants",
+        "camelized": "apNgIsoConstants",
+        "dasherized": "ap-ng-iso-constants",
+        "slugified": "ap-ng-iso-constants",
+        "parts": [
+          "ap",
+          "ng",
+          "iso",
+          "constants"
+        ]
+      },
+      "includeModuleDirectives": false,
+      "includeModuleFilters": true,
+      "includeModuleServices": true,
+      "includeAngularModuleResource": false,
+      "includeAngularModuleCookies": false,
+      "includeAngularModuleSanitize": false,
+      "librarySrcDirectory": "src/ap-ng-iso-constants",
+      "libraryUnitTestDirectory": "test/unit/ap-ng-iso-constants",
+      "libraryUnitE2eDirectory": "test/e2e/ap-ng-iso-constants"
+    }
+  }
+}
