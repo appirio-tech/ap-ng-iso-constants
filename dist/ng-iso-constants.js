@@ -1,6 +1,59 @@
 (function(angular) {
+
+  // Create all modules and define dependencies to make sure they exist
+  // and are loaded in the correct order to satisfy dependency injection
+  // before all nested files are concatenated by Gulp
+
+  // Config
+  angular.module('ngIsoConstants.config', [])
+    .value('ngIsoConstants.config', {
+      debug: true
+    });
+
+  // Modules
+  angular.module('ngIsoConstants.filters', []);
+  angular.module('ngIsoConstants.services', []);
+  angular.module('ngIsoConstants', [
+    'ngIsoConstants.config',
+    'ngIsoConstants.filters',
+    'ngIsoConstants.services'
+  ]);
+
+})(angular);
+
+(function(angular) {
   'use strict';
-  angular.module('apNgIsoConstants.services')
+  angular.module('ngIsoConstants.filters')
+  /**
+   * @brief converts Alpha2 or NumericCode to Name
+   * @details Returns original input if unable to concevt
+   *
+   * @param  input - numeric Country code or alpha2
+   * @return Country name
+   */
+  .filter('isoCountry', ['ISO3166', function(ISO3166) {
+    return function(input) {
+      // check if input is code or alpha2
+      var result = null;
+      if (isNaN(input)) {
+        var re = /\d{2}/;
+        if (re.test(input)) {
+          result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
+        } else {
+          result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
+        }
+      } else {
+        result = ISO3166.getCountryObjFromNumericCode(input);
+      }
+      console.log('result: ', result);
+      return (result) ? result.name: input;
+    };
+  }]);
+})(angular);
+
+(function(angular) {
+  'use strict';
+  angular.module('ngIsoConstants.services')
     .factory('ISO3166', function() {
       var service = {
         getCountryObjFromNumericCode: getCountryObjFromNumericCode,

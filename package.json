@@ -1,13 +1,17 @@
 {
-  "name": "ap-ng-iso-constants",
-  "version": "0.1.0",
+  "name": "appirio-tech-ng-iso-constants",
+  "version": "1.0.0",
   "description": "An AngularJS module to work with ISO Constants",
   "author": {
     "name": "Parth Shah",
     "email": "parth.shah@appirio.com"
   },
-  "main": ["dist/ap-ng-iso-constants.js"],
+  "main": ["dist/ng-iso-constants.js", "dist/ng-iso-constants.min.js"],
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appirio-tech/ng-iso-constants.git"
+  },
   "keywords": [
     "Country",
     "Code",

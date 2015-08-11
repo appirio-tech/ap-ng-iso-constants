@@ -1,6 +1,6 @@
 (function(angular) {
   'use strict';
-  angular.module('apNgIsoConstants.filters')
+  angular.module('ngIsoConstants.filters')
   /**
    * @brief converts Alpha2 or NumericCode to Name
    * @details Returns original input if unable to concevt

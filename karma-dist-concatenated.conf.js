@@ -26,7 +26,7 @@ module.exports = function(config) {
     files: [
       'bower/angular/angular.js',
       'bower/angular-mocks/angular-mocks.js',
-      'dist/ap-ng-iso-constants.js',
+      'dist/ng-iso-constants.js',
       'test/unit/**/*.js'
     ],
 

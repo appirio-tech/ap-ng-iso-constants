@@ -13,26 +13,22 @@ describe('', function() {
   beforeEach(function() {
 
   // Get module
-  module = angular.module('apNgIsoConstants');
+  module = angular.module('ngIsoConstants');
   dependencies = module.requires;
   });
 
   it('should load config module', function() {
-    expect(hasModule('apNgIsoConstants.config')).to.be.ok;
+    expect(hasModule('ngIsoConstants.config')).to.be.ok;
   });
 
-  
+
   it('should load filters module', function() {
-    expect(hasModule('apNgIsoConstants.filters')).to.be.ok;
+    expect(hasModule('ngIsoConstants.filters')).to.be.ok;
   });
-  
 
-  
-
-  
   it('should load services module', function() {
-    expect(hasModule('apNgIsoConstants.services')).to.be.ok;
+    expect(hasModule('ngIsoConstants.services')).to.be.ok;
   });
-  
+
 
 });

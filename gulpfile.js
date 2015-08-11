@@ -36,10 +36,10 @@ var lintFiles = [
 gulp.task('build', function() {
   gulp.src(sourceFiles)
     .pipe(plumber())
-    .pipe(concat('ap-ng-iso-constants.js'))
+    .pipe(concat('ng-iso-constants.js'))
     .pipe(gulp.dest('./dist/'))
     .pipe(uglify())
-    .pipe(rename('ap-ng-iso-constants.min.js'))
+    .pipe(rename('ng-iso-constants.min.js'))
     .pipe(gulp.dest('./dist'));
 });
 
