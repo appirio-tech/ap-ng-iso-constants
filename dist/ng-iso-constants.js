@@ -23,36 +23,6 @@
 
 (function(angular) {
   'use strict';
-  angular.module('ngIsoConstants.filters')
-  /**
-   * @brief converts Alpha2 or NumericCode to Name
-   * @details Returns original input if unable to concevt
-   *
-   * @param  input - numeric Country code or alpha2
-   * @return Country name
-   */
-  .filter('isoCountry', ['ISO3166', function(ISO3166) {
-    return function(input) {
-      // check if input is code or alpha2
-      var result = null;
-      if (isNaN(input)) {
-        var re = /\d{2}/;
-        if (re.test(input)) {
-          result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
-        } else {
-          result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
-        }
-      } else {
-        result = ISO3166.getCountryObjFromNumericCode(input);
-      }
-      console.log('result: ', result);
-      return (result) ? result.name: input;
-    };
-  }]);
-})(angular);
-
-(function(angular) {
-  'use strict';
   angular.module('ngIsoConstants.services')
     .factory('ISO3166', function() {
       var service = {
@@ -325,6 +295,9 @@
       });
 
       function getCountryObjFromNumericCode(numCode) {
+        if (!numCode) {
+          return null;
+        }
         var idx = _codeToCountryObj[numCode.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
@@ -334,6 +307,9 @@
       }
 
       function getCountryObjFromAlpha2(alpha2) {
+        if (!alpha2) {
+          return null;
+        }
         var idx = _alpha2ToCountryObj[alpha2.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
@@ -343,6 +319,9 @@
       }
 
       function getCountryObjFromAlpha3(alpha3) {
+        if (!alpha3) {
+          return null;
+        }
         var idx = _alpha3ToCountryObj[alpha3.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
@@ -357,4 +336,34 @@
 
       return service;
     });
+})(angular);
+
+(function(angular) {
+  'use strict';
+  angular.module('ngIsoConstants.filters')
+  /**
+   * @brief converts Alpha2 or NumericCode to Name
+   * @details Returns original input if unable to concevt
+   *
+   * @param  input - numeric Country code or alpha2
+   * @return Country name
+   */
+  .filter('isoCountry', ['ISO3166', function(ISO3166) {
+    return function(input) {
+      // check if input is code or alpha2
+      var result = null;
+      if (isNaN(input)) {
+        var re = /\d{2}/;
+        if (re.test(input)) {
+          result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
+        } else {
+          result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
+        }
+      } else {
+        result = ISO3166.getCountryObjFromNumericCode(input);
+      }
+      console.log('result: ', result);
+      return (result) ? result.name: input;
+    };
+  }]);
 })(angular);
