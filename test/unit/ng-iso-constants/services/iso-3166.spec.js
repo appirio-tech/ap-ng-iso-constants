@@ -17,6 +17,14 @@ describe('ISO3166 Service', function() {
     });
   });
 
+
+  // test null values
+  it('should return null for null value', function() {
+    expect(ISO3166.getCountryObjFromNumericCode(null)).to.be.null;
+    expect(ISO3166.getCountryObjFromAlpha3(null)).to.be.null;
+    expect(ISO3166.getCountryObjFromAlpha2(null)).to.be.null;
+  });
+
   // check to see if it has the expected function
   it('should return all country objects', function() {
     var result = ISO3166.getAllCountryObjects();

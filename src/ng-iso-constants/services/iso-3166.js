@@ -272,6 +272,9 @@
       });
 
       function getCountryObjFromNumericCode(numCode) {
+        if (!numCode) {
+          return null;
+        }
         var idx = _codeToCountryObj[numCode.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
@@ -281,6 +284,9 @@
       }
 
       function getCountryObjFromAlpha2(alpha2) {
+        if (!alpha2) {
+          return null;
+        }
         var idx = _alpha2ToCountryObj[alpha2.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
@@ -290,6 +296,9 @@
       }
 
       function getCountryObjFromAlpha3(alpha3) {
+        if (!alpha3) {
+          return null;
+        }
         var idx = _alpha3ToCountryObj[alpha3.toString()];
         if (idx >= 0) {
           return _countryObjs[idx];
