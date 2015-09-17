@@ -3,27 +3,32 @@
   angular.module('ngIsoConstants.filters')
   /**
    * @brief converts Alpha2 or NumericCode to Name
-   * @details Returns original input if unable to concevt
+   * @details Returns original input if unable to concert
    *
    * @param  input - numeric Country code or alpha2
    * @return Country name
    */
   .filter('isoCountry', ['ISO3166', function(ISO3166) {
     return function(input) {
-      // check if input is code or alpha2
       var result = null;
-      if (isNaN(input)) {
-        var re = /\d{2}/;
-        if (re.test(input)) {
-          result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
-        } else {
-          result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
-        }
-      } else {
+      if (isNumeric(input)) {
         result = ISO3166.getCountryObjFromNumericCode(input);
+
+      } else if (typeof(input) === 'string') {
+        if (input.length === 2) {
+          result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
+
+        } else if (input.length === 3) {
+          result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
+
+        }
       }
-      console.log('result: ', result);
+
       return (result) ? result.name: input;
+
+      function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+      }
     };
   }]);
 })(angular);
