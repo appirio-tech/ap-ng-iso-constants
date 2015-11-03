@@ -227,7 +227,7 @@
         {alpha2: 'SE', alpha3: 'SWE', code: 752, name: 'Sweden'},
         {alpha2: 'CH', alpha3: 'CHE', code: 756, name: 'Switzerland'},
         {alpha2: 'SY', alpha3: 'SYR', code: 760, name: 'Syrian Arab Republic'},
-        {alpha2: 'TW', alpha3: 'TWN', code: 158, name: 'Taiwan, Province of China'},
+        {alpha2: 'TW', alpha3: 'TWN', code: 158, name: 'Taiwan'},
         {alpha2: 'TJ', alpha3: 'TJK', code: 762, name: 'Tajikistan'},
         {alpha2: 'TZ', alpha3: 'TZA', code: 834, name: 'Tanzania, United Republic of'},
         {alpha2: 'TH', alpha3: 'THA', code: 764, name: 'Thailand'},
