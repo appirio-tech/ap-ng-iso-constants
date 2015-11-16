@@ -3,7 +3,7 @@
   angular.module('ngIsoConstants.filters')
   /**
    * @brief converts Alpha2 or NumericCode to Name
-   * @details Returns original input if unable to concert
+   * @details Returns original input if unable to convert
    *
    * @param  input - numeric Country code or alpha2
    * @return Country name
