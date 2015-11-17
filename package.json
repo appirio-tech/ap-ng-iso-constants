@@ -1,12 +1,15 @@
 {
   "name": "appirio-tech-ng-iso-constants",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "An AngularJS module to work with ISO Constants",
   "author": {
     "name": "Parth Shah",
     "email": "parth.shah@appirio.com"
   },
-  "main": ["dist/ng-iso-constants.js", "dist/ng-iso-constants.min.js"],
+  "main": [
+    "dist/ng-iso-constants.js",
+    "dist/ng-iso-constants.min.js"
+  ],
   "private": true,
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
     "chai-jquery": "^1.2.3",
     "gulp": "^3.8.7",
     "gulp-concat": "^2.3.4",
+    "gulp-coveralls": "^0.1.4",
     "gulp-jshint": "^1.8.4",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
