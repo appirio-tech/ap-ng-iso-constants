@@ -17,8 +17,16 @@ describe('ISO3166 filters', function() {
     expect(isoCountryFilter('US')).to.equal('United States');
   });
 
-  it('should return "United States" string given alpha3', function() {
+  it('should return "United States" given alpha3', function() {
     expect(isoCountryFilter('USA')).to.equal('United States');
+  });
+
+  it('should return "United States" given country code', function() {
+    expect(isoCountryFilter(840)).to.equal('United States');
+  });
+
+  it('should return "Bhutan" given numericString', function() {
+    expect(isoCountryFilter('064')).to.equal('Bhutan');
   });
 
   it('should return the original input if there is no match', function() {
