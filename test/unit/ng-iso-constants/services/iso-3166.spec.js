@@ -2,52 +2,50 @@ describe('ISO3166 Service', function() {
   'use strict';
 
   var ISO3166;
-  // excuted before each "it" is run.
+
   beforeEach(function (){
 
-    // load the module.
     module('ngIsoConstants.services');
 
-    // inject your service for testing.
-    // The _underscores_ are a convenience thing
-    // so you can have your variable name be the
-    // same as your injected service.
     inject(function(_ISO3166_) {
       ISO3166 = _ISO3166_;
     });
   });
 
-
-  // test null values
   it('should return null for null value', function() {
-    expect(ISO3166.getCountryObjFromNumericCode(null)).to.be.null;
+    expect(ISO3166.getCountryObjFromCountryCode(null)).to.be.null;
+    expect(ISO3166.getCountryObjFromNumericString(null)).to.be.null;
     expect(ISO3166.getCountryObjFromAlpha3(null)).to.be.null;
     expect(ISO3166.getCountryObjFromAlpha2(null)).to.be.null;
   });
 
-  // check to see if it has the expected function
   it('should return all country objects', function() {
     var result = ISO3166.getAllCountryObjects();
     expect(result).to.have.length(249);
   });
 
-  it('should return US Country obj for "840"', function () {
-    var result = ISO3166.getCountryObjFromNumericCode(840);
-    expect(result.name).to.equal("United States");
+  it('should return US Country obj for number 840', function () {
+    var result = ISO3166.getCountryObjFromCountryCode(840);
+    expect(result.name).to.equal('United States');
+  });
+
+  it('should return Bhutan Country obj for string "064"', function () {
+    var result = ISO3166.getCountryObjFromNumericString('064');
+    expect(result.name).to.equal('Bhutan');
   });
 
   it('should return US Country obj for "US"', function () {
-    var result = ISO3166.getCountryObjFromAlpha2("US");
-    expect(result.name).to.equal("United States");
+    var result = ISO3166.getCountryObjFromAlpha2('US');
+    expect(result.name).to.equal('United States');
   });
 
-  it('should return US Country obj for "GBR"', function () {
-    var result = ISO3166.getCountryObjFromAlpha3("GBR");
-    expect(result.name).to.equal("United Kingdom");
+  it('should return United Kingdom Country obj for "GBR"', function () {
+    var result = ISO3166.getCountryObjFromAlpha3('GBR');
+    expect(result.name).to.equal('United Kingdom');
   });
 
   it('should return null object for "PAS"', function () {
-    var result = ISO3166.getCountryObjFromAlpha3("PAS");
+    var result = ISO3166.getCountryObjFromAlpha3('PAS');
     should.not.exist(result);
   });
 

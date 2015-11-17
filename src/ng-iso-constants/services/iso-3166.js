@@ -269,10 +269,10 @@
       var _alpha3ToCountryObj        = {};
 
       _countryObjs.forEach(function(obj, index) {
-        _codeToCountryObj[obj.code]          = index;
-        _numericStringToCountryObj[obj.code] = index;
-        _alpha2ToCountryObj[obj.alpha2]      = index;
-        _alpha3ToCountryObj[obj.alpha3]      = index;
+        _codeToCountryObj[obj.code] = index;
+        _numericStringToCountryObj[obj.numericString] = index;
+        _alpha2ToCountryObj[obj.alpha2] = index;
+        _alpha3ToCountryObj[obj.alpha3] = index;
       });
 
       function getCountryObjFromCountryCode(numCode) {
