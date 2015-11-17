@@ -8,7 +8,6 @@ var plumber     = require('gulp-plumber');
 var runSequence = require('run-sequence');
 var jshint      = require('gulp-jshint');
 
-
 var rootDirectory   = path.resolve('./');
 var sourceDirectory = path.join(rootDirectory, './src');
 var sourceFiles = [
