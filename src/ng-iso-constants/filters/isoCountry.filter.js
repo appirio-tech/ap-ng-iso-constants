@@ -12,11 +12,14 @@
     return function(input) {
       var result = null;
       if (isNumeric(input)) {
-        result = ISO3166.getCountryObjFromNumericCode(input);
+        result = ISO3166.getCountryObjFromCountryCode(input);
 
       } else if (typeof(input) === 'string') {
         if (input.length === 2) {
           result = ISO3166.getCountryObjFromAlpha2(input.toUpperCase());
+
+        } else if (input.length === 3 && (typeof(parseInt(input)) === 'number')) {
+          result = ISO3166.getCountryObjFromNumericString(input);
 
         } else if (input.length === 3) {
           result = ISO3166.getCountryObjFromAlpha3(input.toUpperCase());
