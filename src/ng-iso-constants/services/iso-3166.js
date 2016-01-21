@@ -129,7 +129,7 @@
         {alpha2: 'KE', alpha3: 'KEN', code: 404, numericString: '404', name: 'Kenya'},
         {alpha2: 'KI', alpha3: 'KIR', code: 296, numericString: '296', name: 'Kiribati'},
         {alpha2: 'KP', alpha3: 'PRK', code: 408, numericString: '408', name: 'Korea, Democratic People\'s Republic of'},
-        {alpha2: 'KR', alpha3: 'FOR', code: 410, numericString: '410', name: 'Korea, Republic of'},
+        {alpha2: 'KR', alpha3: 'KOR', code: 410, numericString: '410', name: 'Korea, Republic of'},
         {alpha2: 'KW', alpha3: 'KWT', code: 414, numericString: '414', name: 'Kuwait'},
         {alpha2: 'KG', alpha3: 'KGZ', code: 417, numericString: '417', name: 'Kyrgyzstan'},
         {alpha2: 'LA', alpha3: 'LAO', code: 418, numericString: '418', name: 'Lao People\'s Democratic Republic'},
