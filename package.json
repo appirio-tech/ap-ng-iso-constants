@@ -6,11 +6,7 @@
     "name": "Parth Shah",
     "email": "parth.shah@appirio.com"
   },
-  "main": [
-    "dist/ng-iso-constants.js",
-    "dist/ng-iso-constants.min.js"
-  ],
-  "private": true,
+  "main": "dist/ng-iso-constants.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/appirio-tech/ng-iso-constants.git"
